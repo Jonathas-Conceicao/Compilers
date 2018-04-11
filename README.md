@@ -1,11 +1,11 @@
 # Compilers
-A respository for my excercices for my Compilers course at UFPel.
+A repository for my exercises for my Compilers course at UFPel.
 
 ## List of Activities
 List of activities to be done divided by classes.
 
 ### Class 1
-- Exercice
+- Exercise
 		1 - Implement subtraction and division
 		2 - Implement support to natural numbers
 - Task
