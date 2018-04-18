@@ -12,3 +12,7 @@ List of activities to be done divided by classes.
 	1. Change the code generator to a Interpreter  
 	2. Implement the stack machine  
 
+### Class 2
+- Exercise
+	1. Make a lexic analiser for Lugosi using flex
+
