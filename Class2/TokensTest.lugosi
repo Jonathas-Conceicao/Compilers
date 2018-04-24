@@ -23,6 +23,6 @@ printf
 print
 do
 od{
-}
-done
-
+}true
+done false
+truefalse

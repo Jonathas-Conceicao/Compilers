@@ -14,6 +14,7 @@ PRINT "print"
 MAIN "main"
 INT "int"
 BOOL "bool"
+CONSTB   "true"|"false"
 DIGITO   [0-9]
 DIGITOS  {DIGITO}+
 REAIS    {DIGITOS}("."{DIGITOS})
@@ -22,11 +23,12 @@ ID       {LETRA}({LETRA}|{DIGITO})*
 PRESEV   {IF}|{WHILE}|{DO}|{RETURN}|{PRINT}|{MAIN}|{INT}|{BOOL}
 
 %%
+{CONSTB}                {printf("Constante booleana: %s\n", yytext);}
 {PRESEV}                {printf("Palavra reservada: %s\n", yytext);}
 {DIGITOS}               {printf("Inteiro: %s\n", yytext);}
 {REAIS}                 {printf("Real: %s\n", yytext);} 
 {ID}                    {printf("Var: %s\n", yytext);}
-{OPA}                   {printf("Operador Binário: %s\n", yytext);}
+{OPA}                   {printf("Operador aritmético: %s\n", yytext);}
 {OPL}                   {printf("Operador lógico: %s\n", yytext);}
 {ATRIB}                 {printf("Atribuição: %s\n", yytext);}
 {FL}                    {printf("Final de linha: %s\n", yytext);}
