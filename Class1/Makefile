@@ -4,11 +4,12 @@ PACKAGE = Parser						\
 					Compilador				\
 					CodeGen					\
 					ArvoreSintatica	\
+					CodeInterpret		\
 					AnaliseLexica
 
 
 JAVAC = javac
-JC_FLAG = -Xlint:all
+JC_FLAG = # -Xlint:all
 CLASSPATH =
 
 JD = javadoc
@@ -38,7 +39,7 @@ all:
 	$(JAVAC) $(JC_FLAG) $(addprefix $(SRC)/, $(addsuffix .java, $(PACKAGE))) -d $(BIN)/
 
 clean:
-	$(RM) $(RM_FLAG) $(BIN)/*/*.class
+	$(RM) $(RM_FLAG) $(BIN)/*.class
 
 cleanTarget:
 	$(RM) $(RM_FLAG) $(TARGET)*

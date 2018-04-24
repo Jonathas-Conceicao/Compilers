@@ -14,6 +14,7 @@ class Token{
 class AnaliseLexica {
 
 	BufferedReader arquivo;
+  int buffer = 0;
 
 	AnaliseLexica(String a) throws Exception
 	{
@@ -22,49 +23,63 @@ class AnaliseLexica {
 		
 	}
 
-	Token getNextToken() throws Exception
-	{	
+	int consumir() throws Exception {
+		if (buffer == 0)
+			return arquivo.read();
+		else {
+		  int buffer = this.buffer;
+			this.buffer = 0;
+			return buffer;
+		}
+	}
+
+	void devolver(int c) {
+		this.buffer = c;
+	}
+
+	Token getNextToken() throws Exception {
+
 		Token token;
 		int eof = -1;
 		char currchar;
 		int currchar1;
 
 			do{
-				currchar1 =  arquivo.read();
+				currchar1 =  this.consumir();
 				currchar = (char) currchar1;
 			} while (currchar == '\n' || currchar == ' ' || currchar =='\t' || currchar == '\r');
-			
+
 			if(currchar1 != eof && currchar1 !=10) {
+				// System.out.printf("Found %c\n", currchar);
 				if (currchar >= '0' && currchar <= '9') {
-					String numero;
+					String numero = new String();
 					do {
 						numero += currchar;
-						currchar1 =  arquivo.read();
+						currchar1 = this.consumir();
 						currchar = (char) currchar1;
 					} while (currchar >= '0' && currchar <= '9');
+					this.devolver(currchar1);
 					return (new Token (numero, TokenType.NUM));
 				} else {
 					switch (currchar){
 						case '(':
-							return (new Token (new String(currchar),TokenType.APar));
+							return (new Token (String.valueOf(currchar), TokenType.APar));
 						case ')':
-							return (new Token (new String(currchar),TokenType.FPar));
+							return (new Token (String.valueOf(currchar), TokenType.FPar));
 						case '+':
-							return (new Token (new String(currchar),TokenType.SOMA));
+							return (new Token (String.valueOf(currchar), TokenType.SOMA));
 						case '-':
-							return (new Token (new String(currchar),TokenType.SUB));
+							return (new Token (String.valueOf(currchar), TokenType.SUB));
 						case '/':
-							return (new Token (new String(currchar),TokenType.DIV));
+							return (new Token (String.valueOf(currchar), TokenType.DIV));
 						case '*':
-							return (new Token (new String(currchar),TokenType.MULT));
+							return (new Token (String.valueOf(currchar), TokenType.MULT));
 						default: throw (new Exception("Caractere inválido: " + ((int) currchar)));
 					}
 				}
 			}
 
 			arquivo.close();
-			
-		return (new Token(currchar,TokenType.EOF));
-		
+			return (new Token(String.valueOf(currchar), TokenType.EOF));
 	}
 }

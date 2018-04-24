@@ -13,8 +13,10 @@ class Compilador{
 		
 			
 			CodeGen backend = new CodeGen();
+			CodeInterpret interpreter = new CodeInterpret();
 			String codigo = backend.geraCodigo(arv);
-			System.out.println(codigo);
+			int value = interpreter.interpret(arv);
+			System.out.println(codigo + "\nInterpreted value:" + value);
 
 		}catch(Exception e)
 		{			
