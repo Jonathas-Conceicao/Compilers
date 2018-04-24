@@ -14,13 +14,14 @@ PRINT "print"
 MAIN "main"
 INT "int"
 BOOL "bool"
+FUNC "function"
 CONSTB   "true"|"false"
 DIGITO   [0-9]
 DIGITOS  {DIGITO}+
 REAIS    {DIGITOS}("."{DIGITOS})
 LETRA    [a-zA-Z]
 ID       {LETRA}({LETRA}|{DIGITO})*
-PRESEV   {IF}|{WHILE}|{DO}|{RETURN}|{PRINT}|{MAIN}|{INT}|{BOOL}
+PRESEV   {IF}|{WHILE}|{DO}|{RETURN}|{PRINT}|{MAIN}|{INT}|{BOOL}|{FUNC}
 
 %%
 {CONSTB}                {printf("Constante booleana: %s\n", yytext);}

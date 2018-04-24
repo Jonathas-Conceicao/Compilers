@@ -22,7 +22,8 @@ return
 printf
 print
 do
-od{
+function
+function od{
 }true
 done false
 truefalse
