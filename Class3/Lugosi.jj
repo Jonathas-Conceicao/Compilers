@@ -1,0 +1,64 @@
+PARSER_BEGIN(Lugosi)
+import java.io.*;
+public class Lugosi {
+
+  public static void main(String args[]) throws ParseException,IOException {
+    
+    Lugosi parser = new Lugosi(new FileInputStream(args[0]));
+    parser.Lugosi();
+  }
+
+}
+
+PARSER_END(Lugosi)
+
+SKIP :
+{
+  " "
+| "\t"
+| "\n"
+| "\r"
+}
+
+TOKEN :
+{
+  <MAIN: "main">
+| <ACHAVES: "{">
+| <FCHAVES: "}">
+}
+
+TOKEN :
+{
+ <OP: ("+" | "-" | "*" | "/" | "&&" | "||" | "<" | ">" | "==")>
+|< ID: ["a"-"z","A"-"Z"] ( ["a"-"z","A"-"Z","0"-"9"])*>
+
+}
+
+
+
+void Lugosi () :
+{}
+{ 
+
+  Main() 
+//Func()?
+  <EOF> 
+}
+	
+
+void Main ():
+{}
+{
+ <MAIN> <ACHAVES> 
+ 
+ // VarDecl()
+ // SeqComandos()
+
+ <FCHAVES>
+
+}
+
+
+
+
+
