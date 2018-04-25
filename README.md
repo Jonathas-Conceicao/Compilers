@@ -13,7 +13,13 @@ List of activities to be done divided by classes.
 	2. [ ] Implement the stack machine  
 
 ### Class 2
-- Exercise
-	1. [ ] Make a lexic analiser for Lugosi using flex
-	2. [ ] Make some correct and incorrect Lugosi examples
+Lexical analysis class.
+- Task  
+	1. [ ] Make a lexic analiser for Lugosi using flex  
+	2. [ ] Make some correct and incorrect Lugosi examples  
 
+## Class 3
+Syntactic analysis class.  
+-  Task  
+	1. [ ] Finish implementing the Lugosi compiler  
+	2. [ ] Create at least 3 programs examples (can be the same of class 2)  
