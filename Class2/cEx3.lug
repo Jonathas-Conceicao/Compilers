@@ -1,0 +1,5 @@
+main {
+	var int x;
+	x := 30 * 30;
+	return (((x / 30)));
+}
