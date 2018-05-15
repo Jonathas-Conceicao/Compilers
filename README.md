@@ -15,7 +15,7 @@ List of activities to be done divided by classes.
 ### Class 2
 Lexical analysis class.
 - Task  
-	1. [ ] Make a lexic analiser for Lugosi using flex  
+	1. [X] Make a lexic analiser for Lugosi using flex  
 	2. [ ] Make some correct and incorrect Lugosi examples  
 
 ## Class 3
