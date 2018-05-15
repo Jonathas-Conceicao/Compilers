@@ -4,7 +4,7 @@ CC=gcc
 C_FILE=lex.yy.c
 OUT_FILE=lex.out
 
-FILE ?= Tokens.lug
+FILE ?= TokensTest.lug
 
 RM = rm -rf
 
