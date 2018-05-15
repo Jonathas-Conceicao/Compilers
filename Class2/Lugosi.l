@@ -23,6 +23,8 @@ LETRA    [a-zA-Z]
 ID       {LETRA}({LETRA}|{DIGITO})*
 PRESEV   {IF}|{WHILE}|{DO}|{RETURN}|{PRINT}|{MAIN}|{INT}|{BOOL}|{FUNC}
 
+SKIPED   " "|\t|\n
+
 %%
 {CONSTB}                {printf("Constante booleana: %s\n", yytext);}
 {PRESEV}                {printf("Palavra reservada: %s\n", yytext);}
@@ -37,6 +39,7 @@ PRESEV   {IF}|{WHILE}|{DO}|{RETURN}|{PRINT}|{MAIN}|{INT}|{BOOL}|{FUNC}
 {FPAR}                  {printf("Fecha parênteses: %s\n", yytext);}
 {ACHV}                  {printf("Abre chaves: %s\n", yytext);}
 {FCHV}                  {printf("Fecha chaves: %s\n", yytext);}
+{SKIPED}                {printf("");}
 
 %%
 int yywrap();
