@@ -1,0 +1,3 @@
+[submodule "Class3"]
+	path = Class3
+	url = git@github.com:lucasbretana/LugosiOnJvacc.git
