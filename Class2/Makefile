@@ -12,7 +12,7 @@ all: $(C_FILE)
 
 $(C_FILE): Lugosi.l
 	$(FLEX) Lugosi.l
-	$(CC) $(C_FILE) -o $(OUT_FILE)
+	$(CC) $(C_FILE) -o $(OUT_FILE) -Wno-implicit-int -Wno-format-zero-length
 
 run: $(C_FILE)
 	./$(OUT_FILE) < $(FILE)
