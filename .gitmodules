@@ -2,5 +2,5 @@
 	path = Class3
 	url = git@github.com:lucasbretana/LugosiOnJvacc.git
 [submodule "Class2/StackMachine"]
-	path = Class2/StackMachine
+	path = Class1/StackMachine
 	url = git@github.com:Jonathas-Conceicao/StackMachine.git
