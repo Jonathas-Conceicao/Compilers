@@ -20,10 +20,12 @@ DIGITO   [0-9]
 DIGITOS  {DIGITO}+
 REAIS    {DIGITOS}("."{DIGITOS})
 LETRA    [a-zA-Z]
-ID       {LETRA}({LETRA}|{DIGITO})*
+ID       {LETRA}("_"?({LETRA}|{DIGITO})+)*
 PRESEV   {IF}|{WHILE}|{DO}|{RETURN}|{PRINT}|{MAIN}|{INT}|{BOOL}|{FUNC}
 
 SKIPED   " "|\t|\n
+
+REST     .
 
 %%
 {CONSTB}                {printf("Constante booleana: %s\n", yytext);}
@@ -40,6 +42,7 @@ SKIPED   " "|\t|\n
 {ACHV}                  {printf("Abre chaves: %s\n", yytext);}
 {FCHV}                  {printf("Fecha chaves: %s\n", yytext);}
 {SKIPED}                {printf("");}
+{REST}                  {printf("%sError! Unexpeected token%s: %s\n", "\e[91m", "\x1b[0m", yytext);}
 
 %%
 int yywrap();
