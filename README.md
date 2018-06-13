@@ -76,3 +76,26 @@ follow(Y) = {+, \*, )}
 -  Task
 	1. [ ] Pretty Printer for Lugosi
 	2. [ ] Compile Lugosi to another language
+Tips from teacher:
+``` Java
+import java.util.ArrayList;
+
+class Lugosi {
+	Main main;
+	ArrayList <Func> funcs;
+}
+
+class Main {
+	ArrayList <VarDecl> decls;
+	ArrayList <Commands> commands;
+}
+
+class VarDecl {
+	String id;
+	Tipo tipo;
+}
+
+class Tipo {}
+class Int extendes Tipo {}
+class Bool extands Tipo {}
+```
