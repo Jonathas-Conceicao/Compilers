@@ -72,3 +72,7 @@ follow(X) = {EOF, )}
 follow(T) = {+, \*, )}  
 follow(Y) = {+, \*, )}  
 
+# Class 5
+-  Task
+	1. [ ] Pretty Printer for Lugosi
+	2. [ ] Compile Lugosi to another language
