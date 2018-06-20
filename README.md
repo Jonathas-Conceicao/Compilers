@@ -74,8 +74,14 @@ follow(Y) = {+, \*, )}
 
 # Class 5
 -  Task
-	1. [ ] Pretty Printer for Lugosi
-	2. [ ] Compile Lugosi to another language
+	1. [x] Implement Parser
+		- [ ] refactor the language
+	2. [ ] Generate Syntactic Tree
+		- [ ] Define classes for the language
+	3. [ ] Pretty Printer for Lugosi
+	4. [ ] Compile Lugosi to another language
+	5. [ ] Make tree example programs in Lugosi
+
 Tips from teacher:
 ``` Java
 import java.util.ArrayList;
