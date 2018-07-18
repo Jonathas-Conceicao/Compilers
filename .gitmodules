@@ -4,3 +4,6 @@
 [submodule "Class2/StackMachine"]
 	path = Class1/StackMachine
 	url = git@github.com:Jonathas-Conceicao/StackMachine.git
+[submodule "Class5"]
+	path = Class5
+	url = git@github.com:Jonathas-Conceicao/Lugosi.git
